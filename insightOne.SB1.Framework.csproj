@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65FE5E58-70AA-4A5D-832E-9CE662E3A1C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>insightOne.SB1.Framework</RootNamespace>
+    <AssemblyName>insightOne.SB1.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="B1CoreException.cs" />
+    <Compile Include="B1Exception.cs" />
+    <Compile Include="B1ValidateException.cs" />
+    <Compile Include="BusinessOne\B1BusinessObjects.cs" />
+    <Compile Include="BusinessOne\B1PermissionManager.cs" />
+    <Compile Include="Check.cs" />
+    <Compile Include="Core\ServiceLocator.cs" />
+    <Compile Include="Data\B1DataService.cs" />
+    <Compile Include="Data\Migrations\AlterObjectCommand.cs" />
+    <Compile Include="Data\Migrations\AlterTableCommand.cs" />
+    <Compile Include="Data\Migrations\B1Migration.cs" />
+    <Compile Include="Data\Migrations\CreateColumnCommand.cs" />
+    <Compile Include="Data\Migrations\CreateIndexCommand.cs" />
+    <Compile Include="Data\Migrations\CreateObjectCommand.cs" />
+    <Compile Include="Data\Migrations\CreateTableCommand.cs" />
+    <Compile Include="Data\Migrations\IDataMigration.cs" />
+    <Compile Include="Data\Migrations\IDataMigrationInterpreter.cs" />
+    <Compile Include="Data\Migrations\SBOCommandInterpreter.cs" />
+    <Compile Include="Data\Migrations\SchemaBuilder.cs" />
+    <Compile Include="Data\Migrations\TableCommand.cs" />
+    <Compile Include="Exceptions\DefaultExceptionPolicy.cs" />
+    <Compile Include="Exceptions\IExceptionPolicy.cs" />
+    <Compile Include="Extensions\DataExtensions.cs" />
+    <Compile Include="Forms\B1Application.cs" />
+    <Compile Include="Forms\B1AppMenu.cs" />
+    <Compile Include="Forms\B1ContextMenu.cs" />
+    <Compile Include="Forms\B1Form.cs" />
+    <Compile Include="Forms\B1FormTypeAttribute.cs" />
+    <Compile Include="Forms\B1MenuClickArgs.cs" />
+    <Compile Include="Forms\IB1Form.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SAPbouiCOM">
+      <Guid>{6048236A-956D-498D-A6F1-9C81C13AB6E8}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
